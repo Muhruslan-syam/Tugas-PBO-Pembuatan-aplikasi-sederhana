@@ -50,7 +50,13 @@ public class database {
             for (int i = 0; i < data.size(); i++) {
                 mahasiswa mhs = data.get(i);
                 String line = mhs.getNim() + "," + mhs.getNama() + "," + mhs.getAlamat() + "," + mhs.getSemester() + "," + mhs.getSks() + "," + mhs.getIpk() + "\n";
+                sb.append(line);
             }
+        }
+        try{
+            Files.writeString(path,sb.toString());
+        }catch (IOException e){
+            throw new RuntimeException(e);
         }
 
     }
@@ -78,7 +84,7 @@ public class database {
         System.out.println("------------------------------------------------------------------------");
     }
 
-    boolean insert(String nim, String nama, String alamat, int semester, int sks, double ipk) {
+    public boolean insert(String nim, String nama, String alamat, int semester, int sks, double ipk) {
         boolean status = true;
             if (!data.isEmpty()){
                 for (int i = 0; i <data.size();i++){
