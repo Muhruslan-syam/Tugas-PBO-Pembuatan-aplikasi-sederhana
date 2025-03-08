@@ -2,7 +2,7 @@ public class mahasiswa {
     private String  nim;
     private String  nama;
     private String  alamat;
-    private int semester;
+    private int semester; 
     private int sks;
     private double  ipk;
 
